@@ -2,13 +2,37 @@
 <button (click)='consolelogger()' [disabled]="buttonDisable" [innerText]="keimenoKoumpiou" type="button"
     class="btn btn-primary">click
     me!</button>
-<!-- two way binding -->
+<!-- two way binding --
 <input type="text" class="form-control" (input)='setchange($event)' placeholder="onoma">
 <h1>{{onoma}}</h1>
 
-<!-- two way binding using directives -->
+<!-- two way binding using ngModel directive -->
 <input type="text" class="form-control" [(ngModel)]='server' placeholder="server">
 <h2 class="primary"> {{server}} </h2>
 
-<!-- practice goes here! -->
+<!-- practice of two way binding goes here...  -->
+<label>Username</label>
+<input type="text" class="form-control" [(ngModel)]="username">
+<p>{{username}}</p>
+<button class="btn btn-primary" [disabled]="!username" (click)="username = null">Reset user</button>
+<br>
+<label>Ngif example bellow</label><br>
 
+<!-- *ngif example with else -->
+<input type="text" [(ngModel)]="paratsoukli" placeholder="enter nickname">
+<!-- the if statement -->
+<h3 *ngIf="paratsoukli; else nickname"> to paratsoukli sou einai {{paratsoukli}} </h3>
+<!-- else  -->
+<ng-template #nickname>
+    <h3>den exeis epileksei akoma nickname</h3>
+</ng-template>`
+
+
+<!-- Ngfor  -->
+<!-- <button class="btn btn-primary" (click)='showpassword=!showpassword'>display details</button> -->
+<button class="btn btn-primary" (click)='toggleDisplay()'>display details</button>
+<p *ngIf='showpassword'>secret password = tuna</p>
+<div *ngFor='let num of log;let i = index' [ngClass]="{'white-text':num>5}"
+    [ngStyle]="{backgroundColor: num>5 ? 'blue': 'transparent'}">
+    {{num}}
+</div>

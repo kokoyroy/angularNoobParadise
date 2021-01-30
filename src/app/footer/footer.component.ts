@@ -11,18 +11,26 @@ export class FooterComponent implements OnInit {
   keimenoKoumpiou: string = "click me!"
   status: string = 'ok';
   buttonDisable: boolean = true;
-  onoma:string = '';
-  server:string;
+  onoma: string = '';
+  server: string;
+  username: string = null
+  paratsoukli: string = null;
+  showpassword: boolean = false;
+  log: number[] = []
+  toggleDisplay(): void {
+    this.showpassword = !this.showpassword;
+    this.log.push(this.log.length + 1)
+  }
 
-  setchange(e:any):void {
+  setchange(e: any): void {
     console.log(e);
-    
+
     this.onoma = e.target.value;
   }
 
   consolelogger = () => {
     console.log('button clicked');
-    
+
   }
 
 
@@ -40,7 +48,7 @@ export class FooterComponent implements OnInit {
   constructor() {
     setTimeout(() => {
       this.setButtonDisable()
-      this.setKeimenoKoumpiou('komporimosini')
+      this.setKeimenoKoumpiou('allo onoma')
     }, 3000)
   }
 
