@@ -1,3 +1,14 @@
 <p>to onoma tou footer einia {{name}} kai einia tis ekdosis {{getStatus()}} </p>
-<button (click)='consolelogger()' [disabled]="buttonDisable" [innerText]="keimenoKoumpiou" type="button" class="btn btn-primary">click
+<button (click)='consolelogger()' [disabled]="buttonDisable" [innerText]="keimenoKoumpiou" type="button"
+    class="btn btn-primary">click
     me!</button>
+<!-- two way binding -->
+<input type="text" class="form-control" (input)='setchange($event)' placeholder="onoma">
+<h1>{{onoma}}</h1>
+
+<!-- two way binding using directives -->
+<input type="text" class="form-control" [(ngModel)]='server' placeholder="server">
+<h2 class="primary"> {{server}} </h2>
+
+<!-- practice goes here! -->
+

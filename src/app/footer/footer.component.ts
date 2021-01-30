@@ -11,6 +11,14 @@ export class FooterComponent implements OnInit {
   keimenoKoumpiou: string = "click me!"
   status: string = 'ok';
   buttonDisable: boolean = true;
+  onoma:string = '';
+  server:string;
+
+  setchange(e:any):void {
+    console.log(e);
+    
+    this.onoma = e.target.value;
+  }
 
   consolelogger = () => {
     console.log('button clicked');
