@@ -8,7 +8,7 @@ import { Recipe } from '../recipe.model';
 })
 export class RecipeListComponent implements OnInit {
   recipes: Recipe[] = [
-    new Recipe('test','test desc','image from the web')
+    new Recipe('photo','photo me fagita apo to internet','https://libreshot.com/wp-content/uploads/2016/07/healthy-food.jpg')
   ]
   constructor() { }
 
