@@ -2,6 +2,9 @@
     <div class="col xs-10">
         <app-shopping-edit></app-shopping-edit>
         <hr>
-        <p>my shopping list</p>
+        <ul class="list-group">
+            <a href="#" class="list-group-item" style="cursor: pointer;"
+                *ngFor="let arr of ingridients">{{arr.name}}({{arr.amount}})</a>
+        </ul>
     </div>
 </div>
