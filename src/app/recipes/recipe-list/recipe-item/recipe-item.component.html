@@ -1,1 +1,11 @@
-<p>recipe-item works!</p>
+<a href="#" class="list-group-item d-flex justify-content-between clearfix">
+    <div class="mr-auto">
+        <h4 class="list-group-item-heading">{{recipe.name}}</h4>
+        <p class="list-group-item-text">{{recipe.description }}</p>
+        <!-- <p>{{arr.description.length}}</p> -->
+    </div>
+    <span class="ml-auto">
+        <img [src]='recipe.image' alt="{{recipe.name}}" class="img-responsive" style="max-height: 100px;">
+    </span>
+
+</a>

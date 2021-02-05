@@ -5,18 +5,8 @@
 </div>
 <hr> 
 <div class="row">
-    <div *ngFor='let arr of recipes' class="col-xs-12 w-100">
-        <a href="#" class="list-group-item d-flex justify-content-between clearfix">
-            <div class="mr-auto">
-                <h4 class="list-group-item-heading">{{arr.name}}</h4>
-                <p class="list-group-item-text">{{arr.description }}</p>
-                <!-- <p>{{arr.description.length}}</p> -->
-            </div>
-            <span class="ml-auto">
-                <img [src]='arr.image' alt="{{arr.name}}" class="img-responsive" style="max-height: 100px;">
-            </span>
-
-        </a>
-        <!-- <app-recipe-item></app-recipe-item> -->
+    <div class="col-xs-12 w-100">
+        
+        <app-recipe-item *ngFor='let recipe of recipes' [recipe]='recipe'></app-recipe-item>
     </div>
 </div>
