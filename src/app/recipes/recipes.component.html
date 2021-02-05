@@ -1,8 +1,11 @@
 <div class="row">
     <div class="col-md-5">
-        <app-recipe-list></app-recipe-list>
+        <app-recipe-list (recipeEmit)='recipeCatch($event)'></app-recipe-list>
     </div>
     <div class="col-md-7">
-        <app-recipe-detail></app-recipe-detail>
+        <app-recipe-detail *ngIf="recipePassedToDetails;else details" [recipe]='recipePassedToDetails'></app-recipe-detail>
+        <ng-template #details>
+            <p>please select a recipe</p>
+        </ng-template>
     </div>
 </div>
